@@ -6,12 +6,13 @@ package com.onestop.nacos.feign.client;
  */
 
 import com.onestop.common.core.util.Res;
+import com.onestop.nacos.feign.fallback.FeignClientServiceFallbackImpl;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(value = "nacos-feign-server")
-@Service
+@FeignClient(value = "nacos-feign-server", fallback = FeignClientServiceFallbackImpl.class)
+@Component
 public interface FeignClientService {
     @GetMapping("server/api/test")
     Res test();
