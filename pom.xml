@@ -67,6 +67,7 @@
     <modules>
         <module>nacos-console</module>
         <module>nacos-feign</module>
+        <module>os-sentinel-dashboard</module>
     </modules>
 
     <dependencyManagement>
