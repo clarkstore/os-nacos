@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping("feign/client/api")
-public class TestApi {
+@RequestMapping("client/api")
+public class ClientTestApi {
     @Autowired
     private FeignClientService feignClientService;
 
     @GetMapping("test")
     public Res test() {
+        log.error("=========客户端发起调用=========");
         return this.feignClientService.test();
     }
 }

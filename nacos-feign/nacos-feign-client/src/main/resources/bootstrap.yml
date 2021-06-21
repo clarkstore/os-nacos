@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: @artifactId@
+  profiles:
+    active: @profiles.active@
   cloud:
     nacos:
       discovery:
@@ -13,5 +15,3 @@ spring:
         file-extension: yml
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-  profiles:
-    active: @profiles.active@

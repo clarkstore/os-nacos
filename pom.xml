@@ -24,16 +24,6 @@
     </properties>
 
     <dependencies>
-        <!--web 模块-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- 引入Actuator监控依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
         <!--bootstrap 启动器-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -68,6 +58,7 @@
         <module>nacos-console</module>
         <module>nacos-feign</module>
         <module>os-sentinel-dashboard</module>
+        <module>os-gateway</module>
     </modules>
 
     <dependencyManagement>
