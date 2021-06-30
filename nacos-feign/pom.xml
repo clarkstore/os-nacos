@@ -19,9 +19,15 @@
     </modules>
 
     <dependencies>
+        <!--web 模块-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- 引入Actuator监控依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <!--注册中心客户端-->
         <dependency>
@@ -44,15 +50,15 @@
             <artifactId>nacos-client</artifactId>
             <version>${nacos-client.version}</version>
         </dependency>
-        <!--SpringCloud ailibaba sentinel -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-nacos</artifactId>
-        </dependency>
+<!--        &lt;!&ndash;SpringCloud ailibaba sentinel &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.csp</groupId>-->
+<!--            <artifactId>sentinel-datasource-nacos</artifactId>-->
+<!--        </dependency>-->
         <!--feign 依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
