@@ -22,6 +22,6 @@ public class ClientTestApi {
     @GetMapping("test")
     public Res test() {
         log.error("=========客户端发起调用=========");
-        return this.feignClientService.test();
+        return Res.ok(this.feignClientService.test());
     }
 }

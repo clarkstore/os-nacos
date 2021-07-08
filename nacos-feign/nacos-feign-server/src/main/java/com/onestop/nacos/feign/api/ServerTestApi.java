@@ -21,6 +21,6 @@ public class ServerTestApi {
     @GetMapping("test")
     public Res test() {
         log.error("=========服务端被调用=========" + port);
-        return Res.ok("服务端被调用");
+        return Res.ok();
     }
 }
