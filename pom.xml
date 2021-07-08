@@ -12,14 +12,14 @@
     <properties>
         <java.version>8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>2.5.0</spring-boot.version>
-        <!--Nacos微服务配置-->
-        <spring-cloud.version>2020.0.3</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <spring-boot.version>2.5.2</spring-boot.version>
         <pig-nacos.version>2.0.1.RELEASE</pig-nacos.version>
-        <nacos-client.version>2.0.1</nacos-client.version>
         <!--统一配置bom-->
-        <onestop.version>0.3.21</onestop.version>
+        <onestop.version>0.3.22</onestop.version>
+        <!--Nacos微服务配置统一在onestop.bom配置-->
+<!--        <spring-cloud.version>2020.0.3</spring-cloud.version>-->
+<!--        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
+<!--        <nacos-client.version>2.0.2</nacos-client.version>-->
         <maven-compiler.version>3.8.1</maven-compiler.version>
     </properties>
 
@@ -40,7 +40,7 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
-        <!--测试 SpringBoot2.4.0使用JUnit5-->
+        <!--SpringBoot2.4.0后使用 JUnit5-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -56,9 +56,9 @@
 
     <modules>
         <module>nacos-console</module>
+        <module>os-gateway</module>
         <module>nacos-feign</module>
         <module>os-sentinel-dashboard</module>
-        <module>os-gateway</module>
     </modules>
 
     <dependencyManagement>
@@ -67,28 +67,6 @@
                 <groupId>com.github.clarkstore</groupId>
                 <artifactId>os-common-bom</artifactId>
                 <version>${onestop.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- spring cloud alibaba 依赖 -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -48,31 +48,17 @@
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
-            <version>${nacos-client.version}</version>
-        </dependency>
-<!--        &lt;!&ndash;SpringCloud ailibaba sentinel &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.csp</groupId>-->
-<!--            <artifactId>sentinel-datasource-nacos</artifactId>-->
-<!--        </dependency>-->
-        <!--feign 依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <!-- LB 扩展 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
         <!--公共模块-->
         <dependency>
             <groupId>com.github.clarkstore</groupId>
             <artifactId>os-core-spring-boot-starter</artifactId>
+            <version>${onestop.version}</version>
+        </dependency>
+        <!--公共模块-->
+        <dependency>
+            <groupId>com.github.clarkstore</groupId>
+            <artifactId>os-common-feign</artifactId>
             <version>${onestop.version}</version>
         </dependency>
     </dependencies>
