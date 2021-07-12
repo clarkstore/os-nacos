@@ -15,7 +15,7 @@ spring:
         file-extension: yml
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-#监控feign日志输出的包或类
+#日志输出的包或类: 级别
 logging:
   level:
     com.onestop.nacos.feign.api: debug
