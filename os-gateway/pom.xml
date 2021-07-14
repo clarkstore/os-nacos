@@ -69,6 +69,12 @@
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
+        <!--os-core-starter-->
+        <dependency>
+            <groupId>com.github.clarkstore</groupId>
+            <artifactId>os-core-spring-boot-starter</artifactId>
+            <version>${onestop.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
