@@ -16,10 +16,12 @@
 package com.alibaba.csp.sentinel.dashboard.controller.v2;
 
 import com.alibaba.csp.sentinel.dashboard.auth.AuthAction;
+import com.alibaba.csp.sentinel.dashboard.auth.AuthService;
 import com.alibaba.csp.sentinel.dashboard.auth.AuthService.PrivilegeType;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.FlowRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.domain.Result;
 import com.alibaba.csp.sentinel.dashboard.repository.rule.InMemoryRuleRepositoryAdapter;
+import com.alibaba.csp.sentinel.dashboard.rule.DynamicEnums;
 import com.alibaba.csp.sentinel.dashboard.rule.DynamicRuleProvider;
 import com.alibaba.csp.sentinel.dashboard.rule.DynamicRulePublisher;
 import com.alibaba.csp.sentinel.util.StringUtil;
@@ -48,10 +50,10 @@ public class FlowControllerV2 {
     private InMemoryRuleRepositoryAdapter<FlowRuleEntity> repository;
 
     @Autowired
-    @Qualifier("flowRuleNacosProvider")
+    @Qualifier("DynamicRuleNacosProvider")
     private DynamicRuleProvider<List<FlowRuleEntity>> ruleProvider;
     @Autowired
-    @Qualifier("flowRuleNacosPublisher")
+    @Qualifier("DynamicRuleNacosPublisher")
     private DynamicRulePublisher<List<FlowRuleEntity>> rulePublisher;
 
     @GetMapping("/rules")
@@ -62,7 +64,7 @@ public class FlowControllerV2 {
             return Result.ofFail(-1, "app can't be null or empty");
         }
         try {
-            List<FlowRuleEntity> rules = ruleProvider.getRules(app);
+            List<FlowRuleEntity> rules = ruleProvider.getRules(app, DynamicEnums.Rule.FLOW);
             if (rules != null && !rules.isEmpty()) {
                 for (FlowRuleEntity entity : rules) {
                     entity.setApp(app);
@@ -124,7 +126,7 @@ public class FlowControllerV2 {
     }
 
     @PostMapping("/rule")
-    @AuthAction(value = PrivilegeType.WRITE_RULE)
+    @AuthAction(value = AuthService.PrivilegeType.WRITE_RULE)
     public Result<FlowRuleEntity> apiAddFlowRule(@RequestBody FlowRuleEntity entity) {
 
         Result<FlowRuleEntity> checkResult = checkEntityInternal(entity);
@@ -148,7 +150,7 @@ public class FlowControllerV2 {
     }
 
     @PutMapping("/rule/{id}")
-    @AuthAction(PrivilegeType.WRITE_RULE)
+    @AuthAction(AuthService.PrivilegeType.WRITE_RULE)
 
     public Result<FlowRuleEntity> apiUpdateFlowRule(@PathVariable("id") Long id,
                                                     @RequestBody FlowRuleEntity entity) {
@@ -210,6 +212,6 @@ public class FlowControllerV2 {
 
     private void publishRules(/*@NonNull*/ String app) throws Exception {
         List<FlowRuleEntity> rules = repository.findAllByApp(app);
-        rulePublisher.publish(app, rules);
+        rulePublisher.publish(app, rules, DynamicEnums.Rule.FLOW);
     }
 }

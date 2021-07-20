@@ -1,0 +1,12 @@
+[
+  {
+    "resource": "/server/api/degrade",
+    "limitApp": "default",
+    "count": 0.2,
+    "grade": 1,
+    "timeWindow": 10,
+    "minRequestAmount": 5,
+    "statIntervalMs": 1000,
+    "slowRatioThreshold": 0.1
+  }
+]

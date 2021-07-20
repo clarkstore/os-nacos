@@ -1,9 +1,11 @@
 server:
-  port: ${SERVER-PORT:5001}
+  port: ${SERVER-PORT:8011}
 
 spring:
   application:
     name: @artifactId@
+  profiles:
+    active: @profiles.active@
   cloud:
     nacos:
       discovery:
@@ -12,5 +14,4 @@ spring:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         file-extension: yml
         shared-configs:
-          - data-id: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-            refresh: true # 是否自动刷新配置，默认为 false
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}

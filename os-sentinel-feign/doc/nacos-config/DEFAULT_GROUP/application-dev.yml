@@ -1,0 +1,8 @@
+logging:
+  level:
+    org.springframework: info
+    com.onestop: debug
+# feign 配置
+feign:
+  sentinel:
+    enabled: true

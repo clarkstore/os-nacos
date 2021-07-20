@@ -1,0 +1,9 @@
+#Feign配置会优先于Ribbon配置,并且os-nacos项目中没有引入ribbon
+feign:
+  client:
+    config:
+      #这里填具体的服务名称（填default，表示对所有服务生效）
+      default:
+        #connectTimeout和readTimeout这两个得一起配置才会生效
+        connectTimeout: 5000
+        readTimeout: 1000
