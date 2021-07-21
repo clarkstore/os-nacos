@@ -14,6 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
+<!--        <module>os-sentinel-feign-dashboard</module>-->
         <module>os-sentinel-feign-client</module>
         <module>os-sentinel-feign-server</module>
     </modules>

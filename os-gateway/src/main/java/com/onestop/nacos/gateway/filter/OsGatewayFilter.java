@@ -21,7 +21,7 @@ import reactor.core.publisher.Mono;
 public class OsGatewayFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.debug("-------------OsGatewayFilter---------------");
+//        log.debug("-------------OsGatewayFilter---------------");
 
         if (false) {
             log.error("--------------自定义网关验证失败-----------------");
