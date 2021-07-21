@@ -1,0 +1,33 @@
+[{
+    "id": "client_router",
+    "order": 0,
+    "uri": "lb://os-sentinel-feign-client",
+    "predicates": [{
+        "args": {
+            "pattern": "/os-sentinel-feign-client/**"
+        },
+        "name": "Path"
+    }],
+    "filters": [{
+         "args": {
+            "parts": "1"
+        },
+        "name": "StripPrefix"
+    }]
+},{
+    "id": "server_router",
+    "order": 0,
+    "uri": "lb://os-sentinel-feign-server",
+    "predicates": [{
+        "args": {
+            "pattern": "/os-sentinel-feign-server/**"
+        },
+        "name": "Path"
+    }],
+    "filters": [{
+         "args": {
+            "parts": "1"
+        },
+        "name": "StripPrefix"
+    }]
+}]
