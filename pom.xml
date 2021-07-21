@@ -58,7 +58,7 @@
         <module>nacos-console</module>
         <module>os-gateway</module>
         <module>os-sentinel-feign</module>
-        <module>os-sentinel-dashboard</module>
+<!--        <module>os-sentinel-dashboard</module>-->
     </modules>
 
     <dependencyManagement>
