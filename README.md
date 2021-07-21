@@ -9,8 +9,10 @@
 ## OneStop工具平台：Nacos-Demo项目
 #### 本项目基于Nacos2.0的Demo项目，配合os-biz的模块使其实现微服务框架
 
-1. Nacos控制台模块
-2. Nacos-Feign-Demo模块
+1. nacos控制台模块
+2. gateway模块：动态路由
+3. sentinel-feign模块：限流降级
+4. sentinel控制台模块 构建中...
 
 ---
 
