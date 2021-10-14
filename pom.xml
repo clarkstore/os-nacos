@@ -12,10 +12,10 @@
     <properties>
         <java.version>8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>2.5.2</spring-boot.version>
+        <spring-boot.version>2.5.5</spring-boot.version>
         <pig-nacos.version>2.0.1.RELEASE</pig-nacos.version>
         <!--统一配置bom-->
-        <onestop.version>0.4.1</onestop.version>
+        <onestop.version>0.4.18</onestop.version>
         <!--Nacos微服务配置统一在onestop.bom配置-->
 <!--        <spring-cloud.version>2020.0.3</spring-cloud.version>-->
 <!--        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->

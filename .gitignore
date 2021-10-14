@@ -63,3 +63,4 @@ node_modules
 
 ### codegen ###
 /codegen/src/main/java/com/onestop/biz/*
+nacos/conf
