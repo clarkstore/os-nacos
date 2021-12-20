@@ -12,14 +12,9 @@
     <properties>
         <java.version>8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>2.5.5</spring-boot.version>
-        <pig-nacos.version>2.0.1.RELEASE</pig-nacos.version>
+        <spring-boot.version>2.6.1</spring-boot.version>
         <!--统一配置bom-->
-        <onestop.version>0.4.18</onestop.version>
-        <!--Nacos微服务配置统一在onestop.bom配置-->
-<!--        <spring-cloud.version>2020.0.3</spring-cloud.version>-->
-<!--        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
-<!--        <nacos-client.version>2.0.2</nacos-client.version>-->
+        <onestop.version>0.5.7</onestop.version>
         <maven-compiler.version>3.8.1</maven-compiler.version>
     </properties>
 
@@ -55,7 +50,7 @@
     </dependencies>
 
     <modules>
-        <module>nacos-console</module>
+<!--        <module>nacos-console</module>-->
         <module>os-gateway</module>
         <module>os-sentinel-feign</module>
 <!--        <module>os-sentinel-dashboard</module>-->
@@ -119,9 +114,9 @@
     </profiles>
     <repositories>
         <!--阿里云代理-->
-<!--        <repository>-->
-<!--            <id>aliyun</id>-->
-<!--            <url>https://maven.aliyun.com/repository/public</url>-->
-<!--        </repository>-->
+        <repository>
+            <id>aliyun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
     </repositories>
 </project>
